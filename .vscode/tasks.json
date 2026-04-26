@@ -1,0 +1,23 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "env: print summary",
+      "type": "shell",
+      "command": ". ./env/load_env.sh && ko_print_env_summary",
+      "problemMatcher": []
+    },
+    {
+      "label": "test: empty unix home",
+      "type": "shell",
+      "command": "./tests/empty-home-unix.sh",
+      "problemMatcher": []
+    },
+    {
+      "label": "install: unix",
+      "type": "shell",
+      "command": "./unix/install.sh",
+      "problemMatcher": []
+    }
+  ]
+}

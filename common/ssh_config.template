@@ -1,0 +1,75 @@
+# Managed by kaffeerunde SSH onboarding.
+# Public/non-secret OpenSSH client config.
+
+Host ${KO_PROJECT_PREFIX}-mgmt-01
+  HostName ${KO_MGMT_PUBLIC_ENTRY}
+  User ${KO_ADMIN_USER}
+  StrictHostKeyChecking yes
+  UpdateHostKeys no
+  HostKeyAlias ${KO_PROJECT_PREFIX}-mgmt-01
+  IdentityAgent ${KO_AGENT_SOCK}
+  IdentityFile none
+  PreferredAuthentications publickey
+  PubkeyAuthentication yes
+  PasswordAuthentication no
+  KbdInteractiveAuthentication no
+  UserKnownHostsFile ${KO_KNOWN_HOSTS}
+
+Host ${KO_PROJECT_PREFIX}-egress-01
+  HostName ${KO_EGRESS_PUBLIC_ENTRY}
+  User ${KO_ADMIN_USER}
+  StrictHostKeyChecking yes
+  UpdateHostKeys no
+  HostKeyAlias ${KO_PROJECT_PREFIX}-egress-01
+  IdentityAgent ${KO_AGENT_SOCK}
+  IdentityFile none
+  PreferredAuthentications publickey
+  PubkeyAuthentication yes
+  PasswordAuthentication no
+  KbdInteractiveAuthentication no
+  UserKnownHostsFile ${KO_KNOWN_HOSTS}
+
+Host ${KO_PROJECT_PREFIX}-auth-01
+  HostName ${KO_AUTH_01_PRIVATE_IP}
+  User ${KO_ADMIN_USER}
+  StrictHostKeyChecking yes
+  UpdateHostKeys no
+  HostKeyAlias ${KO_PROJECT_PREFIX}-auth-01
+  ProxyJump ${KO_PROJECT_PREFIX}-mgmt-01
+  IdentityAgent ${KO_AGENT_SOCK}
+  IdentityFile none
+  PreferredAuthentications publickey
+  PubkeyAuthentication yes
+  PasswordAuthentication no
+  KbdInteractiveAuthentication no
+  UserKnownHostsFile ${KO_KNOWN_HOSTS}
+
+Host ${KO_PROJECT_PREFIX}-ingress-01
+  HostName ${KO_INGRESS_01_PRIVATE_IP}
+  User ${KO_ADMIN_USER}
+  StrictHostKeyChecking yes
+  UpdateHostKeys no
+  HostKeyAlias ${KO_PROJECT_PREFIX}-ingress-01
+  ProxyJump ${KO_PROJECT_PREFIX}-mgmt-01
+  IdentityAgent ${KO_AGENT_SOCK}
+  IdentityFile none
+  PreferredAuthentications publickey
+  PubkeyAuthentication yes
+  PasswordAuthentication no
+  KbdInteractiveAuthentication no
+  UserKnownHostsFile ${KO_KNOWN_HOSTS}
+
+Host ${KO_PROJECT_PREFIX}-apps-01
+  HostName ${KO_APPS_01_PRIVATE_IP}
+  User ${KO_ADMIN_USER}
+  StrictHostKeyChecking yes
+  UpdateHostKeys no
+  HostKeyAlias ${KO_PROJECT_PREFIX}-apps-01
+  ProxyJump ${KO_PROJECT_PREFIX}-mgmt-01
+  IdentityAgent ${KO_AGENT_SOCK}
+  IdentityFile none
+  PreferredAuthentications publickey
+  PubkeyAuthentication yes
+  PasswordAuthentication no
+  KbdInteractiveAuthentication no
+  UserKnownHostsFile ${KO_KNOWN_HOSTS}

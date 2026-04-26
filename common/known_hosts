@@ -1,0 +1,5 @@
+kaffeerunde-mgmt-01,mgmt.kaffeerunde.todopc.de ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAmKNr35CB13Bnb3fFeN5otf9HdEhd6eupeOneJmNEAB
+kaffeerunde-egress-01,egress.kaffeerunde.todopc.de ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIsYhwVhPGLY2ngjGO2CsSvySmPkpK8mbk0aJzz7rdbv
+kaffeerunde-auth-01,10.42.0.3 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICnAATrQQXma5VxeY8ujd6l0eKFXYYv14wCizQShxCMr
+kaffeerunde-ingress-01,10.42.0.6 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHNUy/PNgzHJjYB/y0GxpsRJwbj8XogopnFNNd85MVPZ
+kaffeerunde-apps-01,10.42.0.8 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJEwDKdBAn75a0mvIqK081VDleCxc+91z7bsYHqNwwJ5

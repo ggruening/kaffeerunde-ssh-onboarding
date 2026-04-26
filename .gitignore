@@ -1,0 +1,15 @@
+# local/private overrides
+*.local
+.env.local
+env/*.local.sh
+
+# temporary test homes and generated state
+.tmp/
+.test-homes/
+.step/
+step-client/
+ssh-agent.env
+
+# OS/editor noise
+.DS_Store
+Thumbs.db

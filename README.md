@@ -14,6 +14,9 @@ ssh kaffeerunde-egress-01
 ssh kaffeerunde-auth-01
 ssh kaffeerunde-ingress-01
 ssh kaffeerunde-apps-01
+
+# after using a foreign machine
+.\windows\cleanup.ps1
 ```
 
 Private hosts are reached via `kaffeerunde-mgmt-01` as `ProxyJump`.
@@ -31,6 +34,54 @@ ssh kaffeerunde-apps-01
 ```
 
 `./unix/login.sh` asks for the Smallstep provisioner password. Do not pipe this command through log sanitizers, because password prompts may become unusable.
+
+## Windows usage
+
+PowerShell with Windows OpenSSH:
+
+```powershell
+git clone <repo-url>
+cd kaffeerunde-ssh-onboarding
+
+.\windows\install.ps1
+.\windows\login.ps1
+
+ssh kaffeerunde-apps-01
+```
+
+The Windows path targets Windows OpenSSH, not PuTTY. Windows default is agentless and does not require the Windows `ssh-agent` service.
+
+
+For an interactive Windows shell helper:
+
+```powershell
+.\windows\shell.ps1 kaffeerunde-apps-01
+```
+
+For private hosts behind `ProxyJump`, the default agentless Windows mode may ask for the key passphrase twice. This is expected and avoids requiring administrator rights for the Windows `ssh-agent` service.
+
+
+### Windows prerequisites
+
+If PowerShell blocks scripts, use a process-local bypass in the current session:
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
+```
+
+If `step.exe` is missing and `winget` is available:
+
+```powershell
+winget install -e --id Smallstep.step
+```
+
+Then verify:
+
+```powershell
+step version
+where.exe step
+```
+
 
 ## What install does
 
@@ -107,4 +158,7 @@ Run before commit or publish:
 ```sh
 ./tests/empty-home-unix.sh
 ./scripts/audit-public-repo.sh
+
+# On Windows PowerShell:
+.\windows\test-empty-profile.ps1
 ```

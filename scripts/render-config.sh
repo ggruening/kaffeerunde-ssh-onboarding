@@ -26,6 +26,7 @@ if [ "${cmd_rc}" = "0" ]; then
       gsub(/\$\{KO_AUTH_01_PRIVATE_IP\}/, ENVIRON["KO_AUTH_01_PRIVATE_IP"], line)
       gsub(/\$\{KO_INGRESS_01_PRIVATE_IP\}/, ENVIRON["KO_INGRESS_01_PRIVATE_IP"], line)
       gsub(/\$\{KO_APPS_01_PRIVATE_IP\}/, ENVIRON["KO_APPS_01_PRIVATE_IP"], line)
+      gsub(/\$\{KO_APPS_02_EXT_WG_IP\}/, ENVIRON["KO_APPS_02_EXT_WG_IP"], line)
       gsub(/\$\{KO_KNOWN_HOSTS\}/, ENVIRON["KO_KNOWN_HOSTS"], line)
       gsub(/\$\{KO_AGENT_SOCK\}/, ENVIRON["KO_AGENT_SOCK"], line)
       print line

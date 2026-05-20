@@ -17,6 +17,7 @@
 : "${KO_AUTH_01_PRIVATE_IP:=10.42.0.3}"
 : "${KO_INGRESS_01_PRIVATE_IP:=10.42.0.6}"
 : "${KO_APPS_01_PRIVATE_IP:=10.42.0.8}"
+: "${KO_APPS_02_EXT_WG_IP:=10.44.0.2}"
 
 # Local client state; can be overridden by environment or env/local.env.sh
 : "${KO_CLIENT_ROOT:=${HOME}/.config/${KO_PROJECT_PREFIX}-ssh}"
@@ -36,6 +37,7 @@ export KO_EGRESS_PUBLIC_ENTRY
 export KO_AUTH_01_PRIVATE_IP
 export KO_INGRESS_01_PRIVATE_IP
 export KO_APPS_01_PRIVATE_IP
+export KO_APPS_02_EXT_WG_IP
 export KO_CLIENT_ROOT
 export KO_STEPPATH
 export KO_SSH_CONFIG

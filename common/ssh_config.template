@@ -73,3 +73,12 @@ Host ${KO_PROJECT_PREFIX}-apps-01
   PasswordAuthentication no
   KbdInteractiveAuthentication no
   UserKnownHostsFile ${KO_KNOWN_HOSTS}
+
+Host ${KO_PROJECT_PREFIX}-apps-02-ext
+  HostName ${KO_APPS_02_EXT_WG_IP}
+  User ${KO_ADMIN_USER}
+  StrictHostKeyChecking yes
+  HostKeyAlias ${KO_PROJECT_PREFIX}-apps-02-ext
+  ProxyJump ${KO_PROJECT_PREFIX}-mgmt-01,${KO_ADMIN_USER}@${KO_INGRESS_01_PRIVATE_IP}
+  IdentityFile none
+  UserKnownHostsFile ${KO_KNOWN_HOSTS}

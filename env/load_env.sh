@@ -53,7 +53,8 @@ ko_require_public_env() {
     KO_EGRESS_PUBLIC_ENTRY \
     KO_AUTH_01_PRIVATE_IP \
     KO_INGRESS_01_PRIVATE_IP \
-    KO_APPS_01_PRIVATE_IP
+    KO_APPS_01_PRIVATE_IP \
+    KO_APPS_02_EXT_WG_IP
   do
     eval "ko_value=\${${ko_name}:-}"
     if [ -z "${ko_value}" ]; then
@@ -77,6 +78,7 @@ ko_print_env_summary() {
   printf 'KO_AUTH_01_PRIVATE_IP=%s\n' "${KO_AUTH_01_PRIVATE_IP}"
   printf 'KO_INGRESS_01_PRIVATE_IP=%s\n' "${KO_INGRESS_01_PRIVATE_IP}"
   printf 'KO_APPS_01_PRIVATE_IP=%s\n' "${KO_APPS_01_PRIVATE_IP}"
+  printf 'KO_APPS_02_EXT_WG_IP=%s\n' "${KO_APPS_02_EXT_WG_IP}"
   printf 'KO_CLIENT_ROOT=%s\n' "${KO_CLIENT_ROOT}"
   printf 'KO_STEPPATH=%s\n' "${KO_STEPPATH}"
   printf 'KO_SSH_CONFIG=%s\n' "${KO_SSH_CONFIG}"

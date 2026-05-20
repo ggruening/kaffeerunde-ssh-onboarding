@@ -119,6 +119,7 @@ $KoEgressPublicEntry = if ($env:KO_EGRESS_PUBLIC_ENTRY) { $env:KO_EGRESS_PUBLIC_
 $KoAuth01PrivateIp = if ($env:KO_AUTH_01_PRIVATE_IP) { $env:KO_AUTH_01_PRIVATE_IP } else { "10.42.0.3" }
 $KoIngress01PrivateIp = if ($env:KO_INGRESS_01_PRIVATE_IP) { $env:KO_INGRESS_01_PRIVATE_IP } else { "10.42.0.6" }
 $KoApps01PrivateIp = if ($env:KO_APPS_01_PRIVATE_IP) { $env:KO_APPS_01_PRIVATE_IP } else { "10.42.0.8" }
+$KoApps02ExtWgIp = if ($env:KO_APPS_02_EXT_WG_IP) { $env:KO_APPS_02_EXT_WG_IP } else { "10.44.0.2" }
 
 $KoHome = Get-KoHome
 $KoLocalAppData = Get-KoLocalAppData
@@ -177,6 +178,7 @@ $config = $config.Replace('${KO_EGRESS_PUBLIC_ENTRY}', $KoEgressPublicEntry)
 $config = $config.Replace('${KO_AUTH_01_PRIVATE_IP}', $KoAuth01PrivateIp)
 $config = $config.Replace('${KO_INGRESS_01_PRIVATE_IP}', $KoIngress01PrivateIp)
 $config = $config.Replace('${KO_APPS_01_PRIVATE_IP}', $KoApps01PrivateIp)
+$config = $config.Replace('${KO_APPS_02_EXT_WG_IP}', $KoApps02ExtWgIp)
 $config = $config.Replace('${KO_KNOWN_HOSTS}', $knownHostsOpenSsh)
 $config = $config.Replace('${KO_IDENTITY_FILE}', $identityFileOpenSsh)
 $config = $config.Replace('${KO_CERTIFICATE_FILE}', $certificateFileOpenSsh)

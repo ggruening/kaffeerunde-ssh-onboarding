@@ -65,7 +65,8 @@ $hosts = @(
     "$ProjectPrefix-egress-01",
     "$ProjectPrefix-auth-01",
     "$ProjectPrefix-ingress-01",
-    "$ProjectPrefix-apps-01"
+    "$ProjectPrefix-apps-01",
+    "$ProjectPrefix-apps-02-ext"
 )
 
 $cmdRc = 0

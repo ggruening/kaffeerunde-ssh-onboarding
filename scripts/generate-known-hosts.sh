@@ -131,6 +131,20 @@ if [ "${cmd_rc}" = "0" ]; then
   fi
 fi
 
+if [ "${cmd_rc}" = "0" ]; then
+  mail01_ext_key="$(
+    ssh -o BatchMode=yes "${KO_ADMIN_USER}@${KO_MAIL_01_EXT_PUBLIC_ENTRY}" \
+      'cat /etc/ssh/ssh_host_ed25519_key.pub' 2>/dev/null | extract_ed25519_key
+  )"
+  if [ "$?" = "0" ]; then
+    add_known_host_line "${KO_PROJECT_PREFIX}-mail-01-ext,${KO_MAIL_01_EXT_PUBLIC_ENTRY}" "${mail01_ext_key}"
+    printf 'OK | fetched %s-mail-01-ext host key over public SSH path\n' "${KO_PROJECT_PREFIX}" | mask_private
+  else
+    printf 'FAIL | could not fetch mail-01-ext host key over public SSH path\n' | mask_private
+    cmd_rc=1
+  fi
+fi
+
 printf '\n== candidate validation ==\n' | mask_private
 if [ "${cmd_rc}" = "0" ]; then
   if grep -E 'PRIVATE KEY|BEGIN OPENSSH PRIVATE KEY|BEGIN .* PRIVATE KEY' "${candidate}" >/dev/null 2>&1; then
@@ -143,10 +157,10 @@ fi
 
 if [ "${cmd_rc}" = "0" ]; then
   line_count="$(wc -l < "${candidate}" | tr -d ' ')"
-  if [ "${line_count}" = "6" ]; then
-    printf 'OK | candidate contains 6 host key lines\n'
+  if [ "${line_count}" = "7" ]; then
+    printf 'OK | candidate contains 7 host key lines\n'
   else
-    printf 'FAIL | candidate contains %s lines, expected 6\n' "${line_count}"
+    printf 'FAIL | candidate contains %s lines, expected 7\n' "${line_count}"
     cmd_rc=1
   fi
 fi

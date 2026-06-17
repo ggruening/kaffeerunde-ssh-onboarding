@@ -89,3 +89,18 @@ Host ${KO_PROJECT_PREFIX}-apps-02-ext
   IdentityFile ${KO_IDENTITY_FILE}
   CertificateFile ${KO_CERTIFICATE_FILE}
   UserKnownHostsFile ${KO_KNOWN_HOSTS}
+
+Host ${KO_PROJECT_PREFIX}-mail-01-ext
+  HostName ${KO_MAIL_01_EXT_PUBLIC_ENTRY}
+  User ${KO_ADMIN_USER}
+  StrictHostKeyChecking yes
+  UpdateHostKeys no
+  HostKeyAlias ${KO_PROJECT_PREFIX}-mail-01-ext
+  IdentitiesOnly yes
+  IdentityFile ${KO_IDENTITY_FILE}
+  CertificateFile ${KO_CERTIFICATE_FILE}
+  PreferredAuthentications publickey
+  PubkeyAuthentication yes
+  PasswordAuthentication no
+  KbdInteractiveAuthentication no
+  UserKnownHostsFile ${KO_KNOWN_HOSTS}

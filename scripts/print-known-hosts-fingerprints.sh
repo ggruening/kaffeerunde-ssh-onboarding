@@ -12,8 +12,8 @@ if [ ! -f "${known_hosts}" ]; then
 fi
 
 line_count="$(wc -l < "${known_hosts}" | tr -d ' ')"
-if [ "${line_count}" != "5" ]; then
-  printf 'FAIL | common/known_hosts has %s lines, expected 5\n' "${line_count}"
+if [ "${line_count}" != "7" ]; then
+  printf 'FAIL | common/known_hosts has %s lines, expected 7\n' "${line_count}"
   cmd_rc=1
 fi
 

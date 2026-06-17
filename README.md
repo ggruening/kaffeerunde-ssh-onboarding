@@ -14,12 +14,14 @@ ssh kaffeerunde-egress-01
 ssh kaffeerunde-auth-01
 ssh kaffeerunde-ingress-01
 ssh kaffeerunde-apps-01
+ssh kaffeerunde-apps-02-ext
+ssh kaffeerunde-mail-01-ext
 
 # after using a foreign machine
 .\windows\cleanup.ps1
 ```
 
-Private hosts are reached via `kaffeerunde-mgmt-01` as `ProxyJump`.
+Private hosts are reached via `kaffeerunde-mgmt-01` as `ProxyJump`. `kaffeerunde-mail-01-ext` uses the public mail hostname with strict host-key pinning.
 
 ## Unix usage
 

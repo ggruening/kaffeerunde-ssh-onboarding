@@ -23,6 +23,7 @@ if [ "${cmd_rc}" = "0" ]; then
       gsub(/\$\{KO_ADMIN_USER\}/, ENVIRON["KO_ADMIN_USER"], line)
       gsub(/\$\{KO_MGMT_PUBLIC_ENTRY\}/, ENVIRON["KO_MGMT_PUBLIC_ENTRY"], line)
       gsub(/\$\{KO_EGRESS_PUBLIC_ENTRY\}/, ENVIRON["KO_EGRESS_PUBLIC_ENTRY"], line)
+      gsub(/\$\{KO_MAIL_01_EXT_PUBLIC_ENTRY\}/, ENVIRON["KO_MAIL_01_EXT_PUBLIC_ENTRY"], line)
       gsub(/\$\{KO_AUTH_01_PRIVATE_IP\}/, ENVIRON["KO_AUTH_01_PRIVATE_IP"], line)
       gsub(/\$\{KO_INGRESS_01_PRIVATE_IP\}/, ENVIRON["KO_INGRESS_01_PRIVATE_IP"], line)
       gsub(/\$\{KO_APPS_01_PRIVATE_IP\}/, ENVIRON["KO_APPS_01_PRIVATE_IP"], line)

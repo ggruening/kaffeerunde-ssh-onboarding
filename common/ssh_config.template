@@ -82,3 +82,17 @@ Host ${KO_PROJECT_PREFIX}-apps-02-ext
   ProxyJump ${KO_PROJECT_PREFIX}-mgmt-01,${KO_ADMIN_USER}@${KO_INGRESS_01_PRIVATE_IP}
   IdentityFile none
   UserKnownHostsFile ${KO_KNOWN_HOSTS}
+
+Host ${KO_PROJECT_PREFIX}-mail-01-ext
+  HostName ${KO_MAIL_01_EXT_PUBLIC_ENTRY}
+  User ${KO_ADMIN_USER}
+  StrictHostKeyChecking yes
+  UpdateHostKeys no
+  HostKeyAlias ${KO_PROJECT_PREFIX}-mail-01-ext
+  IdentityAgent ${KO_AGENT_SOCK}
+  IdentityFile none
+  PreferredAuthentications publickey
+  PubkeyAuthentication yes
+  PasswordAuthentication no
+  KbdInteractiveAuthentication no
+  UserKnownHostsFile ${KO_KNOWN_HOSTS}

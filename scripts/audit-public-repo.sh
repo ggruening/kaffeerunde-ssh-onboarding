@@ -90,10 +90,10 @@ rm -f "${ops_hits}" "${ops_filtered}"
 printf '\n== public repo audit: known_hosts ==\n'
 if [ -f common/known_hosts ]; then
   known_hosts_lines="$(wc -l < common/known_hosts | tr -d ' ')"
-  if [ "${known_hosts_lines}" = "6" ]; then
-    printf 'OK | common/known_hosts has 6 lines\n'
+  if [ "${known_hosts_lines}" = "7" ]; then
+    printf 'OK | common/known_hosts has 7 lines\n'
   else
-    printf 'FAIL | common/known_hosts has %s lines, expected 6\n' "${known_hosts_lines}"
+    printf 'FAIL | common/known_hosts has %s lines, expected 7\n' "${known_hosts_lines}"
     cmd_rc=1
   fi
 

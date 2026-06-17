@@ -4,3 +4,4 @@ kaffeerunde-auth-01,10.42.0.3 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICnAATrQQXma5V
 kaffeerunde-ingress-01,10.42.0.6 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHNUy/PNgzHJjYB/y0GxpsRJwbj8XogopnFNNd85MVPZ
 kaffeerunde-apps-01,10.42.0.8 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJEwDKdBAn75a0mvIqK081VDleCxc+91z7bsYHqNwwJ5
 kaffeerunde-apps-02-ext ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBX+DfYx0j17C2nJI9VzVqQ0AYKywru9NlEQuxeuxmBq
+kaffeerunde-mail-01-ext,mail.gruening.cloud ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICgjk/VLTb1iePXBaa0ZSPo7nfY0FoqNPf/VUewWZomt

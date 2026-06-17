@@ -33,7 +33,8 @@ for host in \
   kaffeerunde-auth-01 \
   kaffeerunde-ingress-01 \
   kaffeerunde-apps-01 \
-  kaffeerunde-apps-02-ext
+  kaffeerunde-apps-02-ext \
+  kaffeerunde-mail-01-ext
 do
   printf '\n== ssh test: %s ==\n' "${host}"
   run_ssh_masked "${host}"

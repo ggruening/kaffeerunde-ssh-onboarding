@@ -115,6 +115,7 @@ $KoStepProvisioner = if ($env:KO_STEP_PROVISIONER) { $env:KO_STEP_PROVISIONER } 
 
 $KoMgmtPublicEntry = if ($env:KO_MGMT_PUBLIC_ENTRY) { $env:KO_MGMT_PUBLIC_ENTRY } else { "mgmt.kaffeerunde.todopc.de" }
 $KoEgressPublicEntry = if ($env:KO_EGRESS_PUBLIC_ENTRY) { $env:KO_EGRESS_PUBLIC_ENTRY } else { "egress.kaffeerunde.todopc.de" }
+$KoMail01ExtPublicEntry = if ($env:KO_MAIL_01_EXT_PUBLIC_ENTRY) { $env:KO_MAIL_01_EXT_PUBLIC_ENTRY } else { "mail.gruening.cloud" }
 
 $KoAuth01PrivateIp = if ($env:KO_AUTH_01_PRIVATE_IP) { $env:KO_AUTH_01_PRIVATE_IP } else { "10.42.0.3" }
 $KoIngress01PrivateIp = if ($env:KO_INGRESS_01_PRIVATE_IP) { $env:KO_INGRESS_01_PRIVATE_IP } else { "10.42.0.6" }
@@ -175,6 +176,7 @@ $config = $config.Replace('${KO_PROJECT_PREFIX}', $KoProjectPrefix)
 $config = $config.Replace('${KO_ADMIN_USER}', $KoAdminUser)
 $config = $config.Replace('${KO_MGMT_PUBLIC_ENTRY}', $KoMgmtPublicEntry)
 $config = $config.Replace('${KO_EGRESS_PUBLIC_ENTRY}', $KoEgressPublicEntry)
+$config = $config.Replace('${KO_MAIL_01_EXT_PUBLIC_ENTRY}', $KoMail01ExtPublicEntry)
 $config = $config.Replace('${KO_AUTH_01_PRIVATE_IP}', $KoAuth01PrivateIp)
 $config = $config.Replace('${KO_INGRESS_01_PRIVATE_IP}', $KoIngress01PrivateIp)
 $config = $config.Replace('${KO_APPS_01_PRIVATE_IP}', $KoApps01PrivateIp)

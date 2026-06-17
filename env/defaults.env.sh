@@ -12,6 +12,7 @@
 # Public entries
 : "${KO_MGMT_PUBLIC_ENTRY:=mgmt.kaffeerunde.todopc.de}"
 : "${KO_EGRESS_PUBLIC_ENTRY:=egress.kaffeerunde.todopc.de}"
+: "${KO_MAIL_01_EXT_PUBLIC_ENTRY:=mail.gruening.cloud}"
 
 # Private host IPs
 : "${KO_AUTH_01_PRIVATE_IP:=10.42.0.3}"
@@ -34,6 +35,7 @@ export KO_STEP_CA_FINGERPRINT
 export KO_STEP_PROVISIONER
 export KO_MGMT_PUBLIC_ENTRY
 export KO_EGRESS_PUBLIC_ENTRY
+export KO_MAIL_01_EXT_PUBLIC_ENTRY
 export KO_AUTH_01_PRIVATE_IP
 export KO_INGRESS_01_PRIVATE_IP
 export KO_APPS_01_PRIVATE_IP

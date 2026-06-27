@@ -164,3 +164,21 @@ Run before commit or publish:
 # On Windows PowerShell:
 .\windows\test-empty-profile.ps1
 ```
+
+<!-- apps-02-ext-ssh-healthcheck -->
+
+## apps-02-ext SSH path check
+
+`apps-02-ext` is intentionally reached over the private admin path, not by public-direct SSH:
+
+```text
+local client -> kaffeerunde-mgmt-01 -> ingress-01 private IP -> apps-02-ext WireGuard IP
+```
+
+Run this after onboarding or after unlocking the local SSH agent:
+
+```sh
+./scripts/check-apps02-ssh-path.sh
+```
+
+If the first hop fails, unlock or repair the local SSH agent before changing host routing or inventory. If only the final alias fails, inspect the apps-02-ext host key or authorized key state.
